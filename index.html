@@ -143,13 +143,13 @@
 				color: rgb(171, 124, 255);
 			}
 		</style>
-		<script src="https://doramisstudio.github.io/name8973492.github.io/assets/scripts/ext.js"></script>
+		<script src="https://doramisstudio.github.io/console/assets/scripts/ext.js"></script>
 	</head>
 	<body>
 		<title id="title">ConsoleJS</title>
 		
 		<div class="window">
-			<h1>ConsoleJS</h1>
+			<h1 id="console_title">ConsoleJS</h1>
 			<textarea spellcheck="false" placeholder="Type some code" id="textara" style="resize: none;"></textarea>
 			<div>
 				<button>Cancel</button>
@@ -167,7 +167,6 @@
 			var textarea = document.getElementById('textara');
 			textarea.addEventListener("keypress", function(event) {
 			if (event.keyCode === 32) {
-				event.preventDefault(); // Cancel the default action, if needed
 				if (event.shiftKey) {
 					
 				}
@@ -218,6 +217,15 @@
 				}
 				
 				log.appendChild(pre);
+			}
+			
+			console.title = function(text) {
+				var console_title = document.getElementById('console_title');
+				
+				if (text == null) {}
+				else {
+					console_title.innerHTML = text;
+				}
 			}
 			
 			console.stdinfo = console.info.bind(console);
