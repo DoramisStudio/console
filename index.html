@@ -221,10 +221,12 @@
 			
 			console.title = function(text) {
 				var console_title = document.getElementById('console_title');
+				var title = document.getElementById('title');
 				
 				if (text == null) {}
 				else {
 					console_title.innerHTML = text;
+					title.innerHTML = text;
 				}
 			}
 			
